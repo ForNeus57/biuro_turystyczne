@@ -1,0 +1,24 @@
+div.wrapper-border {
+  border-radius: 10vh;
+  box-shadow: 0 0 1vh 1vh rgba(0, 0, 0, 0.10);
+  padding: 5vh;
+}
+
+h1 {
+  font-size: 5vh;
+  font-weight: 700;
+  margin-bottom: 0;
+  padding-bottom: 2vh;
+  background-image: var(--primary-gradient-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+}
+
+div.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

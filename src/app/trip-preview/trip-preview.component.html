@@ -1,0 +1,26 @@
+<div class="content">
+  <section style="margin-right: 5vh">
+    <app-mode-selector></app-mode-selector>
+  </section>
+  <div>
+    <section class="trip-list">
+      @for (state of this.trips; track state.trip.id) {
+      <app-trip [trip-details]="state" ></app-trip>
+      }
+<!--      <div class="trip-wrapper">-->
+<!--        <a class="add-trip"-->
+<!--           routerLink="/add-trip">-->
+<!--          <img src="assets/icons/file-earmark-plus.svg"-->
+<!--               alt="Add new trip" />-->
+<!--        </a>-->
+<!--      </div>-->
+    </section>
+    <mat-paginator [length]="this.paginationLength"
+                   [pageSize]="6"
+                   [pageSizeOptions]="[3, 6, 9]"
+                   [showFirstLastButtons]="true"
+                   (page)="handlePageChange($event)"
+                   aria-label="Select page">
+    </mat-paginator>
+  </div>
+</div>

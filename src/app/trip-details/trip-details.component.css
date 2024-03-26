@@ -1,0 +1,174 @@
+
+div.details {
+  /*background: var(--primary-gradient-color);*/
+  /*border-bottom-right-radius: var(--standard-border-radius);*/
+  /*border-top-right-radius: var(--standard-border-radius);*/
+
+  padding: 5vh;
+
+  border-radius: 5vh;
+
+  box-shadow: 0 0 1vh 1vh rgba(0, 0, 0, 0.10);
+
+  margin-bottom: var(--standard-border-radius);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+div.ca {
+}
+
+div.hard-info {
+  background: var(--primary-gradient-color);
+  border-bottom-right-radius: var(--standard-border-radius);
+  border-top-right-radius: var(--standard-border-radius);
+
+  padding: 5vh;
+}
+
+div.hard-info * {
+  color: white;
+}
+
+div.first {
+  width: 50vw;
+}
+
+div.review {
+  border-radius: var(--standard-border-radius);
+
+  padding: 5vh;
+
+  box-shadow: 0 0 1vh 1vh rgba(0, 0, 0, 0.10);
+}
+
+section.information {
+  width: 100%;
+  margin-left: 3vw;
+
+}
+
+section.information * {
+}
+
+div.content {
+  width: 100%;
+}
+div.inner {
+  position: relative;
+  border-radius: 5vh;
+
+  box-shadow: 0 0 0.5vh 0.5vh rgba(0, 0, 0, 0.10);
+  height: 100%;
+}
+
+div.inner::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 5vh;
+
+  padding: 1vh;
+
+  background: var(--primary-gradient-color);
+
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  z-index: -1;
+}
+
+div.inner-inner {
+  padding: 2vw;
+}
+
+
+h1.fancy {
+
+  background-image: var(--primary-gradient-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+
+  margin-bottom: 0;
+}
+
+h3.status {
+  color: #666666;
+  margin-bottom: 0;
+
+  border-bottom: solid 1px #666666;
+}
+
+button {
+  border: none;
+}
+
+button.remove {
+  position: absolute;
+  top: 1.6vh;
+  right: 1.6vh;
+}
+
+button.remove img {
+  width: 5vh;
+  height: 5vh;
+}
+div p {
+  margin-bottom: 0;
+}
+
+section.control p {
+  background-image: var(--primary-gradient-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 4vh;
+
+  padding: 1vh;
+
+  margin-bottom: 0;
+}
+
+section.control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+
+  padding: 0 2vh;
+
+
+}
+section.control p {
+  background: white;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 4vh;
+
+  padding: 1vh;
+
+  margin-bottom: 0;
+}
+
+section.control button {
+  height: 6vh;
+  background: transparent;
+}
+
+section.control button img {
+  height: 6vh;
+}
+
+.review-list {
+
+}

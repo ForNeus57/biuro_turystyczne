@@ -1,0 +1,9 @@
+nav {
+  height: 15vh;
+}
+
+
+main.main-content {
+
+  margin: 0 var(--standard-margin-horizontal);
+}

@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <h1 class="fancy">
+    Shopping Cart List:
+  </h1>
+  <section class="trip-list">
+    @for (state of this.reservedTrips; track state.trip.id) {
+      <div class="content">
+        <input type="checkbox" [checked]="getBuyingState(state.trip.id)" (change)="changeBuyingState(state.trip.id)" >
+        <app-trip [trip-details]="state" ></app-trip>
+      </div>
+    }
+  </section>
+  <section class="summary">
+    <h2>
+      Total price of all trips:
+      {{(this.priceSum * this.priceCurrencyRate.rate)
+        | currency: this.priceCurrencyRate.name:'symbol':'3.2-2'}}
+    </h2>
+    <h2></h2>
+    <button (click)="buy()" class="btn btn-primary">
+      Reserve selected trips
+      <img src="assets/icons/database-add.svg"
+           alt="Add icon">
+    </button>
+  </section>
+</div>

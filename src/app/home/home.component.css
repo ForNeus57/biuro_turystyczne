@@ -1,0 +1,44 @@
+div.wrapper {
+  background-image: var(--primary-gradient-color);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+
+  border-bottom-right-radius: var(--standard-border-radius);
+  border-top-right-radius: var(--standard-border-radius);
+}
+
+div.wrapper * {
+  color: white;
+}
+
+h1.no {
+  font-size: 5vh;
+  font-weight: 700;
+  margin-bottom: 0;
+  padding: 2vh;
+}
+
+div.half-one {
+  flex: 1;
+}
+
+div.half-two {
+  flex: 1;
+}
+
+div.first {
+  margin-bottom: var(--standard-border-radius);
+
+}
+
+
+div.inner {
+  margin: 5vh;
+  border-left: 2px solid white;
+  box-sizing: border-box;
+  padding: 1.5vh;
+  width: 100%;
+}

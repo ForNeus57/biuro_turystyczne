@@ -1,0 +1,39 @@
+<div class="container wrapper">
+  <div class="row">
+        @for (user of this.users; track user.email) {
+          <div class="col-3">
+            {{user.email}}
+            <ul>
+              <li>
+                Is Admin: {{user.isAdmin}}
+              </li>
+              <li>
+                Is Manager: {{user.isManager}}
+              </li>
+              <li>
+                Is Banned: {{user.isBanned}}
+              </li>
+            </ul>
+          </div>
+        }
+    </div>
+  <div class="row">
+    <form (ngSubmit)="onSubmit()">
+      <select [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+        @for (user of this.users; track user.email) {
+          <option value="{{user.email}}">{{user.email}}</option>
+        }
+      </select>
+      <select [(ngModel)]="role" [ngModelOptions]="{standalone: true}">
+        <option value="isAdmin">Admin</option>
+        <option value="isManager">Manager</option>
+        <option value="isBanned">Banned</option>
+      </select>
+      <select [(ngModel)]="value" [ngModelOptions]="{standalone: true}">
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

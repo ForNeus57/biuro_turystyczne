@@ -1,0 +1,45 @@
+:root {
+  --primary-color: cornflowerblue;
+  --secondary-color: white;
+  --tertiary-color: #a6d0eb;
+  --primary-gradient-color: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+
+  --divider-color: hsl(210, 8%, 90%);
+
+  --standard-border-radius: 5vh;
+  --standard-margin-horizontal: calc(5vw / 2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+a {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  filter: brightness(0.7);
+}
+
+a:hover {
+  filter: brightness(0.7);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 wrapper">
+      <h1>
+        Login form:
+      </h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group has-validation">
+          <label class="form-label mt-2 col-12"
+                 for="email">
+            Email address:
+          </label>
+          <input class="form-control"
+                 [ngClass]="{
+                   'is-invalid': this.isSubmitted && loginForm.controls['email'].invalid
+                 }"
+                 type="email"
+                 name="email"
+                 placeholder="Email"
+                 formControlName="email"
+                 id="email">
+          @if (this.isSubmitted && loginForm.controls['email'].invalid) {
+            <div class="invalid-feedback">
+              Email is not provided or is not a valid email!
+            </div>
+          }
+        </div>
+        <div class="form-group has-validation mb-4">
+          <label class="form-label mt-2 col-12"
+                 for="password">
+            Password:
+          </label>
+          <input class="form-control"
+                 [ngClass]="{
+                   'is-invalid': this.isSubmitted && loginForm.controls['password'].invalid
+                 }"
+                 minlength="6"
+                 type="password"
+                 name="password"
+                 placeholder="Password"
+                 formControlName="password"
+                 id="password">
+          @if (this.isSubmitted && loginForm.controls['password'].invalid) {
+            <div class="invalid-feedback">
+              Password is not provided or is less than 6 characters!
+            </div>
+          }
+        </div>
+        <button type="submit" class="btn btn-primary col-12">
+          Login
+        </button>
+      </form>
+      @if (this.isSubmitted && !this.loggedIn && this.loginForm.status !== 'INVALID' && this.can ) {
+        <h3 style="color: red; margin-bottom: 0;">
+          Provided password is not correct or user does not exist!
+        </h3>
+      }
+    </div>
+  </div>
+</div>
+

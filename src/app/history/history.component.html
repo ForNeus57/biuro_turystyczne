@@ -1,0 +1,106 @@
+<div class="container-fluid">
+  <div class="wrapper-border">
+    <div class="main">
+      <h1 class="fancy">
+        History Data List:
+      </h1>
+      <section class="controls">
+        <select [(ngModel)]="filterValue"
+                (change)="onFilterChange()">
+          <option value="all">
+            All
+          </option>
+          <option value="bought">
+            Archived
+          </option>
+          <option value="active">
+            Active
+          </option>
+          <option value="archived">
+            Waiting for start
+          </option>
+        </select>
+      </section>
+    </div>
+    <section class="trip-list">
+      <table class="table table-striped table-hover">
+        <caption>
+          History table, generated based on the bought trips.
+        </caption>
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">
+              #
+            </th>
+            <th scope="col">
+              Bought date
+            </th>
+            <th scope="col">
+              Trip name
+            </th>
+            <th scope="col">
+              Trip link
+            </th>
+            <th scope="col">
+              Price
+            </th>
+            <th scope="col">
+              Start date
+            </th>
+            <th scope="col">
+              End date
+            </th>
+            <th scope="col">
+              Localization
+            </th>
+            <th scope="col">
+              Bought tickets
+            </th>
+            <th scope="col">
+              Status
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (element of this.shownHistory; track element.id) {
+            <tr>
+              <td scope="row">
+                {{ element.id + 1 }}
+              </td>
+              <td scope="row">
+                {{ element.date.toDateString() }}
+              </td>
+              <td>
+                {{ element.trip.name }}
+              </td>
+              <td scope="row">
+                <a>
+                  {{ element.trip.name }}
+                </a>
+              </td>
+              <td>
+                {{(element.trip.price * this.priceCurrencyRate.rate * element.reservations) | currency: this.priceCurrencyRate.name:'symbol':'3.2-2'}}
+              </td>
+              <td>
+                {{ element.trip.startDate.toDateString() }}
+              </td>
+              <td>
+                {{ element.trip.endDate.toDateString() }}
+              </td>
+              <td>
+                {{ element.trip.location }}
+              </td>
+              <td>
+                {{ element.reservations }}
+              </td>
+              <td>
+                {{ element.status }}
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>
+

@@ -1,0 +1,211 @@
+:host {
+  --trip-min-width: 330px;
+  --trip-max-width: 25vw;
+  --image-max-dimentions: 30vh;
+
+  flex: 1;
+
+  min-width: var(--trip-min-width);
+  max-width: var(--trip-max-width);
+  height: 85vh;
+  padding: 3vh;
+}
+
+figure.trip {
+  position: relative;
+  border-radius: var(--standard-border-radius);
+
+  box-shadow: 0 0 0.5vh 0.5vh rgba(0, 0, 0, 0.10);
+  height: 100%;
+
+  /*outline: red solid 1vh;*/
+}
+
+figure.trip::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: var(--standard-border-radius);
+
+  padding: 1vh;
+
+  background: var(--primary-gradient-color);
+
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+}
+
+picture.picture-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: solid 1vh lightgray;
+  border-bottom: solid 1vh lightgray;
+
+  background: var(--primary-gradient-color);
+
+  border-radius: var(--standard-border-radius);
+}
+
+picture img {
+  width: var(--image-max-dimentions);
+  height: var(--image-max-dimentions);
+
+  border-radius: calc(var(--image-max-dimentions) / 2);
+
+  object-fit: cover;
+
+  border: solid 1vh #062783;
+  box-shadow: 0 0 1vh 1vh rgba(0, 0, 0, 0.10);
+
+  display: block;
+}
+
+figcaption.text-wrapper {
+  padding: 1vh 2vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+
+  height: calc(100% - var(--image-max-dimentions) - 2.5vh);
+}
+
+figcaption.text-wrapper * {
+  z-index: 99999;
+}
+
+header.title {
+  height: 10vh;
+}
+
+header.title p {
+  margin-bottom: 0;
+
+  border-bottom: solid 1px var(--divider-color);
+}
+
+section.details {
+  border-bottom: solid 1px var(--divider-color);
+}
+
+section.details > p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+section.control {
+  display: flex;
+  /*justify-content: space-between;*/
+  align-items: center;
+
+  padding: 0 2vh;
+
+
+}
+
+section.control p {
+  background-image: var(--primary-gradient-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 4vh;
+
+  padding: 1vh;
+
+  margin-bottom: 0;
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+button img {
+  width: 6vh;
+  height: 6vh;
+}
+
+button.hidden {
+  visibility: hidden;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(0.9rem,  0.9vw, 3rem);
+  text-align: center;
+  font-weight: bolder;
+  background-image: var(--primary-gradient-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section.explanation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+
+  border-bottom: solid 1px var(--divider-color);
+}
+
+section.explanation div {
+  background-image: var(--primary-gradient-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+div p {
+  margin-bottom: 0;
+}
+
+div.first {
+  text-align: right;
+  flex: 1;
+}
+div.second {
+  text-align: center;
+  width: 30px;
+}
+div.third {
+  text-align: left;
+  flex: 1;
+}
+
+button.remove {
+  position: absolute;
+  top: 1.6vh;
+  right: 1.6vh;
+}
+
+button.remove img {
+  width: 5vh;
+  height: 5vh;
+}
+
+section.rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+section.rating > * {
+  margin-bottom: 0;
+}
+
+a.max {
+  z-index: 9999;
+}
+
+a.max * {
+  z-index: 9999;
+}

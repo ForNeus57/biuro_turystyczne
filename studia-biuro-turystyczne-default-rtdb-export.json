@@ -1,0 +1,310 @@
+{
+  "history": [
+    {
+      "date": "18.01.2024",
+      "id": 4,
+      "reservations": 10,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 4,
+      "reservations": 3,
+      "userId": 0
+    },
+    {
+      "date": "18.01.2024",
+      "id": 3,
+      "reservations": 3,
+      "userId": 1
+    },
+    {
+      "date": "18.01.2024",
+      "id": 2,
+      "reservations": 7,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 4,
+      "reservations": 5,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 9,
+      "reservations": 5,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 0,
+      "reservations": 3,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 0,
+      "reservations": 2,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 0,
+      "reservations": 2,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 0,
+      "reservations": 1,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 6,
+      "reservations": 2,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 6,
+      "reservations": 1,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 6,
+      "reservations": 1,
+      "userId": 2
+    },
+    {
+      "date": "18.01.2024",
+      "id": 6,
+      "reservations": 1,
+      "userId": 2
+    }
+  ],
+  "reviews": [
+    {
+      "date": "",
+      "description": "aaadassssssssssssssss sssssssssssssssssss sssssssssssssssssssss ssssssssssssssss ss",
+      "name": "sdadsadads",
+      "nickname": "xasddsa",
+      "rating": 4,
+      "tripId": "4"
+    },
+    {
+      "date": "",
+      "description": "aaadassssssssssssssss sssssssssssssssssss sssssssssssssssssssss ssssssssssssssss ss XXXXX",
+      "name": "sdadsadads",
+      "nickname": "Dominik",
+      "rating": 1,
+      "tripId": "3"
+    },
+    {
+      "date": "",
+      "description": "dsadadsdssgfdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "name": "ss",
+      "nickname": "Dominik",
+      "rating": 5,
+      "tripId": "4"
+    },
+    {
+      "date": "",
+      "description": "aaadassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss1",
+      "name": "adsdas",
+      "nickname": "aa",
+      "rating": 1,
+      "tripId": "2"
+    },
+    {
+      "date": "",
+      "description": "aaadassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss1",
+      "name": "sdadsadads",
+      "nickname": "klarabreksa@gmail.com",
+      "rating": 1,
+      "tripId": "0"
+    },
+    {
+      "date": "",
+      "description": "aaadassssssssssssssss sssssssssssssssssss sssssssssssssssssssss ssssssssssssssss ss XXXXX",
+      "name": "sdadsadads",
+      "nickname": "klarabreksa@gmail.com",
+      "rating": 5,
+      "tripId": "1"
+    }
+  ],
+  "trips": [
+    {
+      "availableTickets": 22,
+      "description": "Explore the beauty of Sydney and its surroundings.",
+      "endDate": "2024-01-25",
+      "imagePath": "assets/images/australia.jpg",
+      "location": "Australia",
+      "name": "Sydney Adventure",
+      "price": 1200,
+      "rating": 4.5,
+      "reviews": 7,
+      "startDate": "2024-01-10"
+    },
+    {
+      "availableTickets": 15,
+      "description": "Experience the vibrant atmosphere of Rio de Janeiro's Carnival.",
+      "endDate": "2024-01-30",
+      "imagePath": "assets/images/brazil.jpg",
+      "location": "Brazil",
+      "name": "Rio de Janeiro Carnival",
+      "price": 1500,
+      "rating": 1.3,
+      "reviews": 111,
+      "startDate": "2024-01-21"
+    },
+    {
+      "availableTickets": 18,
+      "description": "Relax and unwind on the beautiful beaches of the Dominican Republic.",
+      "endDate": "2024-04-15",
+      "imagePath": "assets/images/dominican.jpg",
+      "location": "Dominican Republic",
+      "name": "Dominican Beach Retreat",
+      "price": 1000,
+      "rating": 4.2,
+      "reviews": 9,
+      "startDate": "2024-04-05"
+    },
+    {
+      "availableTickets": 20,
+      "description": "Enjoy a relaxing boat cruise with breathtaking views.",
+      "endDate": "2024-02-20",
+      "imagePath": "assets/images/boat.jpg",
+      "location": "Caribbean Islands",
+      "name": "Boat Cruise Experience",
+      "price": 800,
+      "rating": 4.1,
+      "reviews": 12,
+      "startDate": "2024-02-15"
+    },
+    {
+      "availableTickets": 30,
+      "description": "Embark on an unforgettable safari adventure in the heart of Kenya.",
+      "endDate": "2024-05-10",
+      "imagePath": "assets/images/kenya.jpg",
+      "location": "Kenya",
+      "name": "Safari Adventure in Kenya",
+      "price": 1800,
+      "rating": 3.3,
+      "reviews": 4,
+      "startDate": "2024-05-01"
+    },
+    {
+      "availableTickets": 20,
+      "description": "Experience luxury and tranquility in the stunning Maldives.",
+      "endDate": "2024-06-20",
+      "imagePath": "assets/images/maldives.jpg",
+      "location": "Maldives",
+      "name": "Maldives Paradise Getaway",
+      "price": 2500,
+      "rating": 2.9,
+      "reviews": 2,
+      "startDate": "2024-06-10"
+    },
+    {
+      "availableTickets": 25,
+      "description": "Immerse yourself in the rich cultural heritage of Oman.",
+      "endDate": "2024-07-15",
+      "imagePath": "assets/images/oman.jpg",
+      "location": "Oman",
+      "name": "Oman Cultural Exploration",
+      "price": 1200,
+      "rating": 4,
+      "reviews": 8,
+      "startDate": "2024-07-01"
+    },
+    {
+      "availableTickets": 25,
+      "description": "Discover the charm and beauty of the City of Lights - Paris.",
+      "endDate": "2024-08-10",
+      "imagePath": "assets/images/paris.jpg",
+      "location": "France",
+      "name": "Paris City of Lights Tour",
+      "price": 2000,
+      "rating": 3.5,
+      "reviews": 11,
+      "startDate": "2024-08-01"
+    },
+    {
+      "availableTickets": 5,
+      "description": "Explore the serene landscapes and rich history of Sri Lanka.",
+      "endDate": "2024-09-15",
+      "imagePath": "assets/images/sir-lanka.jpg",
+      "location": "Sri Lanka",
+      "name": "Serene Sri Lanka Journey",
+      "price": 1400,
+      "rating": 0.2,
+      "reviews": 3,
+      "startDate": "2024-09-05"
+    },
+    {
+      "availableTickets": 30,
+      "description": "Indulge in the beauty and culture of Thailand's tropical paradise.",
+      "endDate": "2023-12-15",
+      "imagePath": "assets/images/thailand.jpg",
+      "location": "Thailand",
+      "name": "Thailand Tropical Paradise",
+      "price": 1600,
+      "rating": 1.5,
+      "reviews": 3,
+      "startDate": "2023-12-01"
+    },
+    {
+      "availableTickets": 0,
+      "description": "Escape to the enchanting beaches of Zanzibar Island.",
+      "endDate": "2024-11-10",
+      "imagePath": "assets/images/zanzibar.jpg",
+      "location": "Tanzania",
+      "name": "Zanzibar Island Escape",
+      "price": 1700,
+      "rating": 3.1,
+      "reviews": 10,
+      "startDate": "2024-11-01"
+    }
+  ],
+  "users": [
+    {
+      "email": "dominikbreksa@gmail.com",
+      "isAdmin": true,
+      "isBanned": false,
+      "isManager": true
+    },
+    {
+      "email": "dominikbreksa@student.agh.edu.pl",
+      "isAdmin": false,
+      "isBanned": false,
+      "isManager": true
+    },
+    {
+      "email": "klarabreksa@gmail.com",
+      "isAdmin": false,
+      "isBanned": false,
+      "isManager": false
+    },
+    {
+      "email": "manager@gmail.com",
+      "isAdmin": false,
+      "isBanned": false,
+      "isManager": true
+    },
+    {
+      "email": "admin@gmail.com",
+      "isAdmin": true,
+      "isBanned": false,
+      "isManager": false
+    },
+    {
+      "email": "banned@gmail.com",
+      "isAdmin": false,
+      "isBanned": true,
+      "isManager": false
+    }
+  ]
+}

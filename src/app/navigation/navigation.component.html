@@ -1,0 +1,98 @@
+<div class="gradient">
+  <div class="left">
+    <figure>
+      <a routerLink="/home">
+        <img src="assets/icons/logo.svg"
+             alt="Logo!">
+      </a>
+    </figure>
+    <section class="element">
+      <a class="nav"
+         routerLink="/home">
+        Home
+      </a>
+    </section>
+    <section class="element">
+      <a class="nav"
+         routerLink="/trip-preview">
+        Trip Preview
+      </a>
+    </section>
+    @if (this.userIsLogged) {
+      @if (this.userIsManager) {
+        <section class="element"
+               routerLink="/add-trip">
+          <a class="nav">
+            Add Trip
+          </a>
+        </section>
+      }
+      <section class="element">
+        <a class="nav"
+           routerLink="/cart">
+          Cart
+        </a>
+      </section>
+      <section class="element">
+        <a class="nav"
+           routerLink="/history">
+          History
+        </a>
+      </section>
+      @if (this.userIsAdmin) {
+        <section class="element">
+          <a class="nav"
+             routerLink="/admin">
+            Admin
+          </a>
+        </section>
+      }
+      @if (this.userIsManager) {
+        <section class="element">
+          <a class="nav"
+             routerLink="/manager">
+            Manager
+          </a>
+        </section>
+      }
+    }
+  </div>
+  <div class="right">
+    @if (this.userIsLogged) {
+      <section class="element">
+        <app-summary></app-summary>
+      </section>
+      <section class="link">
+        @if (this.nearTrip == true) {
+      <a routerLink="/history" class="link">
+        <figure class="notify">
+          <img src="assets/icons/alarm-fill.svg"
+               alt="Urgency icon!">
+        </figure>
+      </a>
+      }
+      </section>
+      <section class="element">
+        <a routerLink="/home" class="link-summary">
+          {{this.username}}
+        </a>
+      </section>
+      <section class="element">
+        <button class="link-summary" (click)="signOut()">
+          Sign Out
+        </button>
+      </section>
+    } @else {
+    <section class="element">
+      <a routerLink="/register" class="link-summary">
+        Register
+      </a>
+    </section>
+    <section class="element">
+      <a routerLink="/login" class="link-summary">
+        Login
+      </a>
+    </section>
+    }
+  </div>
+</div>

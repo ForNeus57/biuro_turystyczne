@@ -1,0 +1,7 @@
+.wrapper {
+
+  box-shadow: 0 0 1vh 1vh rgba(0, 0, 0, 0.10);
+  border-radius: var(--standard-border-radius);
+
+  padding: 5vh;
+}

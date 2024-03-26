@@ -1,0 +1,185 @@
+<figure class="trip"
+        [ngStyle]="{
+          'outline': this.tripDetails.tripClasses + ' solid 2vh',
+        }">
+  @if (this.isManager) {
+  <button class="remove"
+        (click)="this.trolley.removeTrip(this.tripDetails.trip.id)">
+    <img src="/assets/icons/x-circle.svg"
+         alt="Remove trip">
+  </button>
+  }
+  <picture class="picture-show">
+    @if (this.isLogged) {
+    <a routerLink="/trip/{{this.tripDetails.trip.id}}" class="max">
+      <img src="{{this.tripDetails.trip.imagePath}}"
+           alt="{{this.tripDetails.trip.name}}">
+    </a>
+    } @else {
+    <img src="{{this.tripDetails.trip.imagePath}}"
+           alt="{{this.tripDetails.trip.name}}">
+    }
+  </picture>
+  <figcaption class="text-wrapper">
+    <header class="title">
+      <h1 [ngStyle]="{
+        'text-decoration': this.checkAdd() ? 'none' : 'line-through',
+        '-webkit-text-fill-color': this.checkAdd() ? 'transparent' : 'black',
+      }">
+        {{ this.tripDetails.trip.name | uppercase }}
+      </h1>
+      <p [ngStyle]="{
+        'text-decoration': this.checkAdd() ? 'none' : 'line-through',
+        'text-align': 'center',
+        }">
+        {{ this.tripDetails.trip.startDate | date }} - {{ this.tripDetails.trip.endDate | date }}
+      </p>
+      <p [ngStyle]="{
+          'text-decoration': this.checkAdd() ? 'none' : 'line-through',
+          'margin': '1vh 0',
+        }">
+        Price: {{(this.tripDetails.trip.price * this.priceExchangeCurrency.rate) | currency: this.priceExchangeCurrency.name:'symbol':'3.2-2'}}
+      </p>
+    </header>
+    <section class="details">
+      <p [ngStyle]="{'text-decoration': this.checkAdd() ? 'none' : 'line-through'}">
+        Location: {{ this.tripDetails.trip.location | uppercase }}
+      </p>
+      <p [ngStyle]="{'text-decoration': this.checkAdd() ? 'none' : 'line-through'}">
+        {{ this.tripDetails.trip.description }}
+      </p>
+    </section>
+    <section class="explanation">
+      <div class="first">
+        <p>
+          Reserved
+        </p>
+      </div>
+      <div class="second">
+        <p>
+          |
+        </p>
+      </div>
+      <div class="third">
+        <p [ngStyle]="{
+            'text-decoration': this.checkAdd() ? 'none' : 'line-through',
+            '-webkit-text-fill-color': this.checkAdd() ? 'transparent' : 'black',
+          }">
+          Available
+        </p>
+      </div>
+    </section>
+    <section class="control" [ngStyle]="{
+     'justify-content': this.isLogged ? 'space-between' : 'center',
+    }">
+      @if (this.isLogged) {
+      <button class="add"
+            [ngStyle]="{'visibility': this.checkAdd() ? 'visible' : 'hidden'}"
+              (click)="addReservation()">
+        <img src="assets/icons/plus-circle.svg"
+             alt="Plus circle"
+             [ngStyle]="{
+              'opacity': this.tripDetails.trip.availableTickets - this.reservations < this.warningValue ? '0.3' : '1',
+              }">
+      </button>
+      }
+      <p>
+        {{this.reservations | number: '2.0-0'}} | {{this.tripDetails.trip.availableTickets | number: '2.0-0'}}
+      </p>
+      @if (this.isLogged) {
+      <button class="subtract"
+              [ngStyle]="{'visibility': this.checkRemove() ? 'visible' : 'hidden'}"
+              (click)="removeReservation()">
+        <img src="assets/icons/dash-circle.svg"
+             alt="Minus Circle"
+             [ngStyle]="{
+              'opacity': this.reservations < this.warningValue ? '0.3' : '1',
+             }">
+      </button>
+      }
+    </section>
+    <section class="rating">
+      <!-- REWORK TODO: -->
+      @if (this.tripDetails.trip.rating < 0.25) {
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+      }
+      @if (this.tripDetails.trip.rating >= 0.25 && this.tripDetails.trip.rating < 0.75) {
+        <img src="/assets/icons/star-half.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+      }
+      @if (this.tripDetails.trip.rating >= 0.75 && this.tripDetails.trip.rating < 1.25) {
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+      }
+      @if (this.tripDetails.trip.rating >= 1.25 && this.tripDetails.trip.rating < 1.75) {
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-half.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+      }
+      @if (this.tripDetails.trip.rating >= 1.75 && this.tripDetails.trip.rating < 2.25) {
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+      }
+      @if (this.tripDetails.trip.rating >= 2.25 && this.tripDetails.trip.rating < 2.75) {
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-half.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+      }
+      @if (this.tripDetails.trip.rating >= 2.75 && this.tripDetails.trip.rating < 3.25) {
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+      }
+      @if (this.tripDetails.trip.rating >= 3.25 && this.tripDetails.trip.rating < 3.75) {
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-half.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+      }
+      @if (this.tripDetails.trip.rating >= 3.75 && this.tripDetails.trip.rating < 4.25) {
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star.svg" alt="">
+      }
+      @if (this.tripDetails.trip.rating >= 4.25 && this.tripDetails.trip.rating < 4.75) {
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-half.svg" alt="">
+      }
+      @if (this.tripDetails.trip.rating >= 4.75) {
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+        <img src="/assets/icons/star-fill.svg" alt="">
+      }
+      <p>
+        {{this.tripDetails.trip.rating | number: '1.1-1'}}
+      </p>
+    </section>
+  </figcaption>
+</figure>

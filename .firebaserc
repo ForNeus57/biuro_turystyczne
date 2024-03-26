@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "studia-biuro-turystyczne": {
+      "hosting": {
+        "project": [
+          "studia-biuro-turystyczne"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "studia-biuro-turystyczne"
+  }
+}

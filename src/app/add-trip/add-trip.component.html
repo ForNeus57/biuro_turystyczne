@@ -1,0 +1,188 @@
+<div class="add-trip-form container-fluid">
+  <div class="row">
+    <form [formGroup]="tripForm"
+          (ngSubmit)="onSubmit()"
+          class="col-6"
+          (change)="reloadPreview()">
+      <div class="form-group has-validation">
+        <label class="form-label mt-2 col-12"
+               for="name">
+          Trip Name:
+        </label>
+        <input class="form-control"
+               [ngClass]="{
+                 'is-invalid': this.isSubmitted && tripForm.controls['name'].invalid,
+                 'is-valid': this.isSubmitted && tripForm.controls['name'].valid
+               }"
+               type="text"
+               name="trip-name"
+               placeholder="Trip Name"
+               formControlName="name"
+               id="name">
+        @if (this.isSubmitted && tripForm.controls['name'].invalid) {
+          <div class="invalid-feedback">
+            Trip name is not provided!
+          </div>
+        }
+      </div>
+      <div class="form-group">
+        <label class="form-label mt-2 col-12"
+               for="location">
+          Trip Location:
+        </label>
+        <input class="form-control"
+               [ngClass]="{
+                 'is-invalid': this.isSubmitted && tripForm.controls['location'].invalid,
+                 'is-valid': this.isSubmitted && tripForm.controls['location'].valid
+               }"
+               type="text"
+               name="trip-location"
+               placeholder="Trip Location"
+               formControlName="location"
+               id="location">
+        @if (this.isSubmitted && tripForm.controls['location'].invalid) {
+          <div class="invalid-feedback">
+            Trip name is not provided!
+          </div>
+        }
+      </div>
+      <div class="form-group" formGroupName="dates">
+        <label class="form-label mt-2 col-6"
+               for="start-date">
+          Trip Start Date:
+        </label>
+        <input class="form-control col-3"
+               [ngClass]="{
+                 'is-invalid': this.isSubmitted && tripForm.controls.dates.controls.startDate.touched && tripForm.controls['dates'].controls['startDate'].invalid,
+                 'is-valid': this.isSubmitted && tripForm.controls.dates.controls.startDate.touched && tripForm.controls['dates'].controls['startDate'].valid
+               }"
+               type="date"
+               name="trip-start-date"
+               placeholder="Trip Start Date"
+               formControlName="startDate"
+               id="start-date">
+        @if (this.isSubmitted && tripForm.controls['dates'].controls['startDate'].invalid) {
+          <div class="invalid-feedback">
+            Trip start date is not provided!
+          </div>
+        }
+        <label class="form-label mt-2 col-6"
+               for="end-date">
+          Trip End Date:
+        </label>
+        <input class="form-control col-3"
+               [ngClass]="{
+                 'is-invalid': this.isSubmitted && tripForm.controls.dates.controls.endDate.touched && tripForm.controls['dates'].controls['endDate'].invalid,
+                 'is-valid': this.isSubmitted && tripForm.controls.dates.controls.endDate.touched && tripForm.controls['dates'].controls['endDate'].valid
+               }"
+               type="date"
+               name="trip-end-date"
+               placeholder="Trip End Date"
+               formControlName="endDate"
+               id="end-date">
+        @if (this.isSubmitted && tripForm.controls['dates'].controls['endDate'].invalid) {
+          <div class="invalid-feedback">
+            Trip end date is not provided or start date is less than given end date!
+          </div>
+        }
+
+      </div>
+      <div class="form-group" formGroupName="price">
+        <label class="form-label mt-2 col-6">
+          Trip Price:
+        </label>
+        <input class="form-control"
+               [ngClass]="{
+                 'is-invalid': this.isSubmitted && tripForm.controls['price'].controls['amount'].invalid,
+                 'is-valid': this.isSubmitted && tripForm.controls['price'].controls['amount'].valid
+               }"
+               type="number"
+               name="trip-price"
+               placeholder="Trip Price"
+               step="0.01"
+               min="1"
+               formControlName="amount">
+        @if (this.isSubmitted && tripForm.controls['price'].controls['amount'].invalid) {
+          <div class="invalid-feedback">
+            Trip price is not provided or is less than 1!
+          </div>
+        }
+        <label class="form-label mt-2 col-6">
+          Provided Currency:
+          <select class="form-control"
+                  formControlName="currency">
+            <option value="USD">
+              USD
+            </option>
+            <option value="EUR">
+              EUR
+            </option>
+            <option value="PLN">
+              PLN
+            </option>
+          </select>
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="form-label mt-2 col-12">
+          Available Tickets:
+        </label>
+        <input class="form-control"
+               [ngClass]="{
+                 'is-invalid': this.isSubmitted && tripForm.controls['availableTickets'].invalid,
+                 'is-valid': this.isSubmitted && tripForm.controls['availableTickets'].valid
+               }"
+               type="number"
+               name="available-tickets"
+               placeholder="Available Tickets"
+               min="1"
+               max="99"
+               formControlName="availableTickets">
+        @if (this.isSubmitted && tripForm.controls['availableTickets'].invalid) {
+          <div class="invalid-feedback">
+            Available tickets value is not provided or is less than 1 or higher than 99!
+          </div>
+        }
+      </div>
+      <div class="form-group">
+        <label class="form-label mt-2 col-12">
+          Trip Description:
+        </label>
+        <input class="form-control"
+               [ngClass]="{
+                 'is-invalid': this.isSubmitted && tripForm.controls['description'].invalid,
+                 'is-valid': this.isSubmitted && tripForm.controls['description'].valid
+               }"
+               type="text"
+               name="trip-description"
+               placeholder="Trip Description (max 500)"
+               maxlength="500"
+               minlength="10"
+               formControlName="description">
+        @if (this.isSubmitted && tripForm.controls['description'].invalid) {
+          <div class="invalid-feedback">
+            Description is not provided or is less than 10 characters or more than 500!
+          </div>
+        }
+      </div>
+      <div class="form-group">
+        <label class="form-label mt-2 col-12">
+          Trip Image:
+        </label>
+        <input class="form-control"
+               type="file"
+               name="trip-image"
+               placeholder="Trip Image"
+               formControlName="imageFile">
+      </div>
+      <button type="submit" class="btn col-12">
+        Add Trip
+        <img src="assets/icons/database-add.svg"
+             alt="Add icon">
+      </button>
+    </form>
+    <div class="col-5">
+      <app-trip [trip-details]="previewTrip"></app-trip>
+    </div>
+  </div>
+</div>

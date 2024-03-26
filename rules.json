@@ -1,0 +1,32 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+
+    "history": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+
+    "reviews": {
+      ".read": "auth != null",
+      ".write": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('isBanned').val() === false)"
+    },
+
+    "trips": {
+      ".read": "true",
+      ".write": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('isManager').val() === true)"
+    },
+
+    "users": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+
+      "$uid": {
+        ".validate": "auth.uid === $uid",
+        ".read": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('isAdmin').val() === true)",
+        ".write": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('isAdmin').val() === true)"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<div class="row">
+  <form (ngSubmit)="onChange()">
+    <div class="form-group">
+      <label for="location">
+        Location:
+      </label>
+      <input type="text"
+             class="form-control"
+             id="location"
+             placeholder="Location" [(ngModel)]="localization" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <label>
+        Rating ({{this.bounds.ratingStart}} - {{this.bounds.ratingEnd}}):
+      </label>
+      <mat-slider min="{{this.bounds.ratingStart}}" max="{{this.bounds.ratingEnd}}" discrete step="0.1">
+        <input value="{{this.bounds.ratingStart}}" matSliderStartThumb (valueChange)="onRatingStartChange($event)">
+        <input value="{{this.bounds.ratingEnd}}" matSliderEndThumb (valueChange)="onRatingEndChange($event)">
+      </mat-slider>
+    </div>
+    <div class="form-group">
+      <label>
+        Price ({{(this.bounds.priceStart * this.priceExchangeCurrency.rate) | currency: this.priceExchangeCurrency.name:'symbol':'3.2-2'}} - {{(this.bounds.priceEnd * this.priceExchangeCurrency.rate) | currency: this.priceExchangeCurrency.name:'symbol':'3.2-2'}}):
+      </label>
+      <mat-slider min="{{this.bounds.priceStart * this.priceExchangeCurrency.rate}}" max="{{this.bounds.priceEnd * this.priceExchangeCurrency.rate}}" discrete>
+        <input value="{{this.bounds.priceStart * this.priceExchangeCurrency.rate}}" matSliderStartThumb (valueChange)="onPriceStartChange($event)">
+        <input value="{{this.bounds.priceEnd * this.priceExchangeCurrency.rate}}" matSliderEndThumb (valueChange)="onPriceEndChange($event)">
+      </mat-slider>
+    </div>
+    <div class="form-group">
+      <label>
+        Date ({{this.bounds.dateStart.getTime() | date: 'dd.MM.yyyy'}} - {{this.bounds.dateEnd.getTime() | date: 'dd.MM.yyyy'}}):
+      </label>
+      <mat-slider min="{{ this.bounds.dateStart.getTime() / 1000 }}" max="{{ this.bounds.dateEnd.getTime() / 1000 }}" discrete step="{{ 24 * 60 * 60}}" [displayWith]="convertDate">
+        <input value="{{this.bounds.dateStart.getTime() / 1000}}" matSliderStartThumb (valueChange)="onDateStartChange($event)">
+        <input value="{{this.bounds.dateEnd.getTime() / 1000}}" matSliderEndThumb (valueChange)="onDateEndChange($event)">
+      </mat-slider>
+    </div>
+  </form>
+</div>

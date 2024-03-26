@@ -1,0 +1,29 @@
+<div class="content">
+  <div class="inner">
+    <div class="inner-inner">
+      <section class="currency-management">
+        <h1>
+          Currency:
+        </h1>
+        <select [(ngModel)]="selectedCurrency"
+                (change)="change()">
+          <option value="USD">
+            USD
+          </option>
+          <option value="EUR">
+            EUR
+          </option>
+          <option value="PLN">
+            PLN
+          </option>
+        </select>
+      </section>
+      <section class="cart-status" [ngStyle]="{
+        'background-color': this.determineColor()
+      }">
+        <h1>{{this.trolleySize}}</h1>
+      </section>
+      <app-filter></app-filter>
+    </div>
+  </div>
+</div>

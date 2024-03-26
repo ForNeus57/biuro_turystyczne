@@ -1,0 +1,6 @@
+<a routerLink="/cart" class="link">
+  {{(this.totalPrice * this.priceExchangeCurrency.rate)
+    | currency: this.priceExchangeCurrency.name:'symbol':'3.2-2' }}
+  |
+  {{this.itemsSize}} items
+</a>
