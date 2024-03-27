@@ -1,27 +1,35 @@
-# Project
+# Biuro turystyczne - Aplikacja Webowa na bazie Angular 17, wraz z Backend -em zbudowanym w Firebase.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+### Autor:
+- [Dominik Breksa](https://github.com/ForNeus57)
 
-## Development server
+## Opis:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Jest to Angularowa aplikacja webowa, która pozwala na przeglądanie ofert biura turystycznego, dodawanie ich do koszyka, a także składanie zamówień. Aplikacja posiada również panel administracyjny, który pozwala na zarządzanie ofertami, zamówieniami oraz użytkownikami.
 
-## Code scaffolding
+Urzytkownicy mogą przeglądać oferty, dodawać je do koszyka, a także składać zamówienia.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Schemat bazy danych znajduje się w pliku `studia-biuro-turystyczne-default-rtdb-export.json`.
 
-## Build
+Reguły dostępu do bazy danych znajdują się w pliku `rules.json`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Funkcjonalności:
 
-## Running unit tests
+* Autentyfikacja użytkowników (Logowanie, rejestracja)
+* Przeglądanie ofert (filtracja, paginacja i zmiana waluty)
+* Dodawanie ofert do koszyka
+* Składanie zamówień
+* Panel administracyjny - łącznie z banowaniem użytkowników przez konto administratora. Zmiana roli użytkownika.
+* Dodawanie, usuwanie ofert wycieczek.
+* Wykorzystanie routingu w celu nawigacji między komponentami.
+* Historia zamówień danego użytkownika, wraz z alertami o zbliżających się wycieczkach.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Technologie:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Angular 17
+- Firebase (Realtime Database, Authentication)
+- Bootstrap, MaterialUI
+- HTML
+- CSS
+- TypeScript
+- Express.js
